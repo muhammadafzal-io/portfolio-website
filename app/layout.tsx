@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   description:
     "Full-stack software engineer specializing in React, Next.js, and Node.js. Building scalable web applications and payment systems.",
   generator: "v0.app",
+  icons: {
+    icon: "./icone.png", // ✅ Add this line
+  },
 };
 
 export default function RootLayout({

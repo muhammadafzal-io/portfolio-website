@@ -6,13 +6,15 @@ import { Button } from "@/components/ui/button"
 import { ParallaxProvider, Parallax } from "react-scroll-parallax"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
+import { SiLinkedin, SiGithub } from "react-icons/si";
+import { FaPhoneAlt } from "react-icons/fa";
 
 export default function Hero() {
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setIsLoaded(true)
-  }, [])
+    setIsLoaded(true);
+  }, []);
 
   return (
     <ParallaxProvider>
@@ -38,7 +40,9 @@ export default function Hero() {
 
           <h1
             className={`text-5xl sm:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-[#00ff9d] via-[#ff2ebd] to-[#05d7ff] bg-clip-text text-transparent mb-6 leading-tight drop-shadow-[0_0_10px_rgba(255,0,255,0.3)] ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              isLoaded
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
             } transition-all duration-700`}
           >
             Muhammad Afzal
@@ -46,14 +50,17 @@ export default function Hero() {
 
           <p
             className={`text-lg sm:text-xl text-gray-300 mb-8 max-w-xl transition-all duration-700 ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              isLoaded
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
             }`}
           >
             Crafting scalable and high-performance web applications with{" "}
             <span className="text-[#00ff9d] font-semibold">React</span>,{" "}
             <span className="text-[#ff2ebd] font-semibold">Next.js</span>, and{" "}
-            <span className="text-[#05d7ff] font-semibold">Nest.js</span>. Dedicated to clean
-            code, modern design, and seamless user experience.
+            <span className="text-[#05d7ff] font-semibold">Nest.js</span>.
+            Dedicated to clean code, modern design, and seamless user
+            experience.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -74,6 +81,30 @@ export default function Hero() {
                 Get In Touch
               </Button>
             </Link>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex items-center justify-center lg:justify-start gap-6 mt-8 text-2xl">
+            <Link
+              href="https://www.linkedin.com/in/muhammad-afzal-754966261/"
+              target="_blank"
+              className="text-gray-300 hover:text-[#ff2ebd] transition-transform transform hover:scale-110"
+            >
+              <SiLinkedin />
+            </Link>
+            <Link
+              href="https://github.com/muhammadafzal-io"
+              target="_blank"
+              className="text-gray-300 hover:text-[#ff2ebd] transition-transform transform hover:scale-110"
+            >
+              <SiGithub />
+            </Link>
+            <a
+              href="tel:+923457066680"
+              className="text-gray-300 hover:text-[#ff2ebd] transition-transform transform hover:scale-110"
+            >
+              <FaPhoneAlt />
+            </a>
           </div>
         </motion.div>
 
@@ -96,5 +127,5 @@ export default function Hero() {
         </Parallax>
       </section>
     </ParallaxProvider>
-  )
+  );
 }
